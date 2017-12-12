@@ -1,0 +1,1 @@
+#define MEM_SIZE_WORD 4096

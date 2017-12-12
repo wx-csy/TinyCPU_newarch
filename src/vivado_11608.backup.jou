@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Mon Dec 11 09:09:57 2017
+# Process ID: 11608
+# Current directory: E:/Vivado/TinyCPU/src
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10936 E:\Vivado\TinyCPU\src\TinyCPU.xpr
+# Log file: E:/Vivado/TinyCPU/src/vivado.log
+# Journal file: E:/Vivado/TinyCPU/src\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Vivado/TinyCPU/src/TinyCPU.xpr
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+disconnect_hw_server localhost:3121
+connect_hw_server
+open_hw_target
+disconnect_hw_server localhost:3121
+connect_hw_server

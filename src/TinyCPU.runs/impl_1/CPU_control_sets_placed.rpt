@@ -1,0 +1,122 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Tue Dec 12 23:56:27 2017
+| Host         : DESKTOP-CDNGG3S running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file CPU_control_sets_placed.rpt
+| Design       : CPU
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    57 |
+| Unused register locations in slices containing registers |    91 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             101 |           50 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              64 |           16 |
+| Yes          | No                    | No                     |              80 |           34 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              24 |            8 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------+------------------------------------+---------------------------------+------------------+----------------+
+|   Clock Signal   |            Enable Signal           |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++------------------+------------------------------------+---------------------------------+------------------+----------------+
+| ~clk_IBUF_BUFG   |                                    |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][5]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][0]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][1]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][2]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][3]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][4]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][6]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/frame_reg[8][7]      |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/tx/div/uart_txd_reg         |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/debug_reg[0][0]      |                                 |                1 |              4 |
+|  serial_clk_BUFG | serial/rx/div/FIFO_wdata_reg[7][0] | serial/rx/FIFO_wdata[7]_i_1_n_0 |                2 |              8 |
+|  serial_clk_BUFG | pc/E[0]                            |                                 |                3 |              8 |
+|  serial_clk_BUFG | serial/rx/div/E[0]                 | serial/rx/arrival0              |                3 |              8 |
+|  serial_clk_BUFG | serial/rx/E[0]                     |                                 |                3 |              8 |
+|  serial_clk_BUFG | serial/tx/div/E[0]                 | serial/tx/div/SR[0]             |                3 |              8 |
+| ~clk_IBUF_BUFG   | clock/sel                          |                                 |                3 |              9 |
+|  serial_clk_BUFG | serial/tx/FIFO_re0                 |                                 |                3 |             10 |
+|  serial_clk_BUFG | pc/rptr_reg[7]_8[0]                |                                 |                6 |             16 |
+|  serial_clk_BUFG | serial/tx/E[0]                     |                                 |                6 |             16 |
+|  clk_IBUF_BUFG   |                                    |                                 |                8 |             32 |
+|  serial_clk_BUFG |                                    | serial/rx/div/clear             |                8 |             32 |
+|  serial_clk_BUFG |                                    | serial/tx/div/cnt[0]_i_1__0_n_0 |                8 |             32 |
+|  serial_clk_BUFG |                                    |                                 |               41 |             68 |
+|  serial_clk_BUFG | pc/p_0_in                          |                                 |               12 |             96 |
+|  serial_clk_BUFG | pc/FIFO_reg_87                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_88                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_89                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | controller/FIFO_reg_7              |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_91                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_92                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_93                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_94                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_95                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_96                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_97                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_98                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_99                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | controller/FIFO_reg_6              |                                 |               32 |            128 |
+|  serial_clk_BUFG | controller/FIFO_reg_8              |                                 |               32 |            128 |
+|  serial_clk_BUFG | controller/FIFO_reg_9              |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_72                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_73                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_74                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_75                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_76                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_77                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_78                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_79                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_90                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_80                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_81                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_82                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_83                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_84                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_85                     |                                 |               32 |            128 |
+|  serial_clk_BUFG | pc/FIFO_reg_86                     |                                 |               32 |            128 |
++------------------+------------------------------------+---------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                    10 |
+| 4      |                     1 |
+| 8      |                     5 |
+| 9      |                     1 |
+| 10     |                     1 |
+| 16+    |                    39 |
++--------+-----------------------+
+
+

@@ -1,0 +1,91 @@
+Program Control			PC
+
+_jump				J
+	Specify whether to jump.
+	0: no jump
+	1: jump
+
+_rel				R
+	Specify the jump mode.
+	0: absolute address
+	1: rel offset
+
+_addr_ext_mode		E
+	Specify the mode of address extend
+	0: signed extend
+	1: concat with PC
+
+_s_next_PC[2]		NP
+	Specify next PC if jump.
+	00: the second register
+	01: immediate field in instr
+	10: addr field in instr
+	11: UNDEFINED
+Decoder					DEC
+
+_ext_signed			E
+	Specify how to extend the immediate.
+	0: unsigned
+	1: signed
+
+Memory Control				MEM
+
+_mem_en				E
+	Indicate whether memory read/write operation
+	is enabled. 1 for yes, 0 for no.
+
+_mem_rw				W
+	Specify whether to read or to write.
+	0: read memory
+	1: write memory
+
+
+Registers				REG
+
+_r1_sel[2]			R1
+	Specify the first register to read.
+	00: zero register ($0)
+	01: rs
+	10: rt
+	11: rd
+
+_r2_sel[2]			R2
+	Specify the second register to read.
+	00: zero register ($0)
+	01: rs
+	10: rt
+	11: rd
+
+_rw_sel[2]			RW
+	Specify the register to write.
+	00: given by _w_reg
+	01: rs
+	10: rt
+	11: rd
+
+_w_reg				W_REG
+	Specify the register to write, if _rw_sel = 11.
+
+_s_regw_data[2]		WD
+    Specify the data to write.
+	00: PC+8 (when linking)
+	01: data bus
+	10: ALU result
+	11: UNDEFINED
+
+ALU 					ALU
+
+_s_alu_op2[2]		O2
+	Specify the second oprand.
+	00: 0
+	01: the second register
+	10: shamt
+	11: extended immediate
+
+_alu_funct[4]		FUNC
+	Specify ALU function.
+Hi/Lo |  000  |  001  |  010  |  011  |  100  |  101  |  110  |  111  |
+-----------------------------------------------------------------------
+  0   |   0   |  add  |       |  sub  |  and  |  or   |  xor  |  nor  |
+  1   |  <=0  |       |   lt  |  ltu  |  sll  |  srl  |       |       |
+

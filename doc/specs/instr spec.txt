@@ -1,0 +1,155 @@
+ Type   -31-                                                    -0-
+   R    | opcode(6) | rs(5) | rt(5) | rd(5) | shamt(5) | funct(6) |
+   I    | opcode(6) | rs(5) | rt(5) |       immediate(16)         |
+   J    | opcode(6) |                address(26)                  |
+
+
+* Memory Operation
+
+LW -- Load Word (I)
+Syntax:     LW %rt, %base, offset, LW %rt, offset(%base)
+Operation:  %rt <- M[R[%base]+immd]
+Encoding:   |  100011  | %base |  %rt  |          offset          |
+                 LW
+
+SW -- Store Word (I)
+Syntax:     SW %rt, %base, offset, SW %rt, offset(%base)
+Operation:  M[R[%base]+immd] <- %rt
+Encoding:   |  101011  | %base |  %rt  |          offset          |
+                 SW
+
+* ALU Operation
+
+ADDU -- Add Unsigned Word (R)
+Syntax:     ADDU %rd, %rs, %rt
+Operation:  %rd <- %rs + %rt
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  100001  |
+               SPECIAL                             0       ADDU
+
+ADDIU -- Add Immediate Unsigned Word (I)
+Syntax:     ADDIU %rt, %rs, immd
+Operation:  %rt <- %rs + immd
+Encoding:   |  001001  |  %rs  |  %rt  |           immd           |
+               ADDIU               
+
+SUBU -- Subtract Unsigned Word (R)
+Syntax:     SUBU %rd, %rs, %rt
+Operation:  %rd <- %rs - %rt
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  100011  |
+               SPECIAL                             0       SUBU
+
+AND -- And (R)
+Syntax:     AND %rd, %rs, %rt
+Operation:  %rd <- %rs and %rt
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  100100  |
+               SPECIAL                             0       AND
+
+ANDI -- And Immediate (I)
+Syntax:     ANDI %rt, %rs, immd
+Operation:  %rt <- %rs and immd (unsigned)
+Encoding:   |  001100  |  %rs  |  %rt  |         immd (u)         |
+                ANDI
+
+OR -- Or (R)
+Syntax:     OR %rd, %rs, %rt
+Operation:  %rd <- %rs or %rt
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  100101  |
+               SPECIAL                             0       OR
+
+ORI -- Or Immediate (I)
+Syntax:     ORI %rt, %rs, immd
+Operation:  %rt <- %rs or immd (unsigned)
+Encoding:   |  001101  |  %rs  |  %rt  |         immd (u)         |
+                ORI
+
+XOR -- Exclusive Or (R)
+Syntax:     XOR %rd, %rs, %rt
+Operation:  %rd <- %rs xor %rt
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  100110  |
+               SPECIAL                             0       XOR
+
+XORI -- Exclusive Or Immediate (I)
+Syntax:     XORI %rt, %rs, immd
+Operation:  %rt <- %rs xor immd (unsigned)
+Encoding:   |  001110  |  %rs  |  %rt  |         immd (u)         |
+                XOR
+
+NOR -- Not Or (R)
+Syntax:     NOR %rd, %rs, %rt
+Operation:  %rd <- %rs nor %rt
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  100111  |
+               SPECIAL                             0       NOR
+
+SLT -- Set on Less Than (R)
+Syntax:     SLT %rd, %rs, %rt
+Operation:  R[%rd] <- (R[%rs] < R[%rt])
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  101010  |
+               SPECIAL                             0       SLT
+
+SLTI -- Set on Less Than Immediate (I)
+Syntax:     SLTI %rt, %rs, immd
+Operation:  R[%rt] <- (R[%rs] < immd)
+Encoding:   |  001010  |  %rs  |  %rt  |           immd           |
+                SLTI
+
+SLTU -- Set on Less Than Unsigned (R)
+Syntax:     SLTU %rd, %rs, %rt
+Operation:  R[%rd] <- (R[%rs] < R[%rt]) unsigned
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  101011  |
+               SPECIAL                             0       SLTU
+
+SLTIU -- Set on Less Than Immediate Unsigned (I)
+Syntax:     SLTIU %rt, %rs, immd
+Operation:  R[%rt] <- (R[%rs] < immd) (unsigned)
+Encoding:   |  001011  |  %rs  |  %rt  |           immd           |
+               SLTIU
+
+SLL -- Shift Word Left Logical (R)
+Syntax:     SLL %rd, %rt, shamt
+Operation:  R[%rd] <- R[%rt] << shamt
+Encoding:   |  000000  | 00000 |  %rt  |  %rd  | shamt |  000000  |
+               SPECIAL     0                               SLL
+
+SLLV -- Shift Word Left Logical Variable (R)
+Syntax:     SLLV %rd, %rt, %rs
+Operation:  R[%rd] <- R[%rt] << R[%rs]
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  000100  |
+               SPECIAL                             0       SLLV
+
+SRL -- Shift Word Right Logical (R)
+Syntax:     SRL %rd, %rt, shamt
+Operation:  R[%rd] <- R[%rt] >> shamt (logical)
+Encoding:   |  000000  | 00000 |  %rt  |  %rd  | shamt |  000010  |
+               SPECIAL     0                               SRL
+
+SRLV -- Shift Word Right Logical Variable (R)
+Syntax:     SRLV %rd, %rt, %rs
+Operation:  R[%rd] <- R[%rt] >> R[%rs] (logical)
+Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  000110  |
+               SPECIAL                             0       SRLV
+
+* Jump Operation
+
+J -- Jump (J)
+Syntax:     J instr_addr
+Operation:  %PC <- instr_index * 4
+Encoding:   |  000010  |              instr_addr                  |
+                 J
+
+BLEZ -- Branch on Less Than or Equal to Zero (I)
+Syntax:     BLEZ %rs, offset
+Operation:  If R[%rs] <= 0 Then %PC += offset * 4
+Encoding:   |  000110  |  %rs  | 00000 |          offset          |
+                BLEZ               0
+
+JAL -- Jump and Link (J)
+Syntax:     J instr_addr
+Operation:  %PC <- instr_index * 4, %31 <- R[%PC] + 8
+Encoding:   |  000011  |              instr_addr                  |
+                JAL
+
+JR -- Jump Register (R)
+Syntax:     JR %rs
+Operation:  %PC <- %rs
+Encoding:   |  000000  |  %rs  | 00000 | 00000 | 00000 |  001000  |
+               SPECIAL                                      JR

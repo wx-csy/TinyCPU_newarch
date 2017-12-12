@@ -1,0 +1,11 @@
+Main Memory Address
+31             0
+| 0 | addr(31) |
+
+Device Address
+31                  14         9          0
+| 11111111111111111 | devno(5) | port(10) |
+
+DEV_ID
+0		None
+1		Serial

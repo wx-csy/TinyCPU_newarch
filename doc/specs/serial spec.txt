@@ -1,0 +1,7 @@
+Serial Specification
+
+ IO_PORT | input function  | output function |
+-----------------------------------------------
+      0  |    rx_received  |                 |
+      1  |        tx_busy  |                 |
+     16  |     rx_receive  |        tx_send  |
