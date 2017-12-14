@@ -1,0 +1,36 @@
+_org(0);
+    NOP();
+$("START")
+    LI($1, 'a');
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+    SW($1, _device(1, 16));
+$("TRAP")
+    J("TRAP");

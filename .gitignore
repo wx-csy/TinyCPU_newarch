@@ -84,3 +84,11 @@
 !*.elf
 !*.bmm
 !*.xmp
+
+###########
+# additional
+###########
+!doc/*
+!samples/*
+!*.cpp
+!*.txt
