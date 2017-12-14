@@ -33,7 +33,7 @@ module freq_div(input clk, input en, output out_freq);
     reg [31:0] cnt;
     initial cnt = 0;
 `ifdef __DEBUG__
-    always @(posedge clk) if (en) cnt = cnt + 1073741823; else cnt = 0;
+    always @(posedge clk) if (en) cnt = cnt + 1073741824; else cnt = 0;
 `else
     always @(posedge clk) if (en) cnt = cnt + 1649267; else cnt = 0;
 `endif
@@ -75,7 +75,7 @@ module serial_rx(input clk_serial, input uart_rxd,
                 frame[cnt] <= uart_rxd;
                 if (cnt == 10) begin
                     cnt <= cnt + 1;
-                    debug[31:0] <= {debug[31:16] + 1, debug[7:0], frame[8:1]};
+                    debug[31:0] <= {debug[31:16] + 1, debug[8:1], frame[8:1]};
                     FIFO_wdata <= frame[8:1];
                     FIFO_we <= 1;
                     check <= ^(frame[9:1]);
@@ -132,7 +132,7 @@ module serial_tx(input clk_serial, input FIFO_empty, input [7:0] FIFO_rdata, out
 endmodule
 
 module Serial(input clk, input clk_serial, input en, input rw, input [31:0] address, inout [31:0] iodata,
-              output uart_txd, input uart_rxd, output [3:0] debug);
+              output uart_txd, input uart_rxd, output [31:0] debug);
     wire [9:0] port = address[9:0];
     
     wire rx_FIFO_full, rx_FIFO_empty;
@@ -161,9 +161,9 @@ module Serial(input clk, input clk_serial, input en, input rw, input [31:0] addr
     
     always @(*) begin
         case (port)
-            0: output_data = {31'b0, ~rx_FIFO_empty};   // rx_receiv
+            0: output_data = {31'b0, ~rx_FIFO_empty};   // rx_receive
             1: output_data = {31'b0, tx_FIFO_full};     // tx_busy
-            16: output_data = {24'b0, rx_FIFO_rdata};   // rx_receive
+            16: output_data = {24'b0, rx_FIFO_rdata};   // rx/tx
             default: output_data = 0;
         endcase
     end

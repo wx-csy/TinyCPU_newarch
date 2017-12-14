@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-| Date             : Tue Dec 12 23:57:22 2017
+| Date             : Fri Dec 15 00:33:20 2017
 | Host             : DESKTOP-CDNGG3S running 64-bit major release  (build 9200)
 | Command          : report_power -file CPU_power_routed.rpt -pb CPU_power_summary_routed.pb -rpx CPU_power_routed.rpx
 | Design           : CPU
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.135 |
-| Dynamic (W)              | 0.064 |
+| Total On-Chip Power (W)  | 0.147 |
+| Dynamic (W)              | 0.075 |
 | Device Static (W)        | 0.072 |
 | Effective TJA (C/W)      | 4.8   |
-| Max Ambient (C)          | 84.4  |
-| Junction Temperature (C) | 25.6  |
+| Max Ambient (C)          | 84.3  |
+| Junction Temperature (C) | 25.7  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,20 +49,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |     0.006 |     8701 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     1734 |     20800 |            8.34 |
-|   CARRY4                 |    <0.001 |       91 |      8150 |            1.12 |
+| Clocks                   |    <0.001 |        3 |       --- |             --- |
+| Slice Logic              |     0.006 |     8749 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     1737 |     20800 |            8.35 |
+|   CARRY4                 |    <0.001 |       95 |      8150 |            1.17 |
 |   LUT as Distributed RAM |    <0.001 |     4144 |      9600 |           43.17 |
-|   Register               |    <0.001 |      269 |     41600 |            0.65 |
+|   Register               |    <0.001 |      297 |     41600 |            0.71 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes            |    <0.001 |     2242 |     32600 |            6.88 |
-|   Others                 |     0.000 |       24 |       --- |             --- |
-| Signals                  |     0.048 |     4024 |       --- |             --- |
+|   Others                 |     0.000 |       23 |       --- |             --- |
+| Signals                  |     0.047 |     4069 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |        50 |            2.00 |
-| I/O                      |     0.008 |       25 |       210 |           11.90 |
+| I/O                      |     0.021 |       25 |       210 |           11.90 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.135 |          |           |                 |
+| Total                    |     0.147 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.065 |       0.055 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
+| Vccint    |       1.000 |     0.064 |       0.055 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,7 +141,7 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| CPU                         |     0.064 |
+| CPU                         |     0.075 |
 |   alu                       |    <0.001 |
 |   clock                     |    <0.001 |
 |   controller                |     0.001 |
@@ -1171,7 +1171,7 @@ Table of Contents
 |     mem_reg_896_1023_7_7    |     0.000 |
 |     mem_reg_896_1023_8_8    |     0.000 |
 |     mem_reg_896_1023_9_9    |     0.000 |
-|   pc                        |     0.046 |
+|   pc                        |     0.045 |
 |   regs                      |     0.004 |
 |     regs_reg_r1_0_31_0_5    |    <0.001 |
 |     regs_reg_r1_0_31_12_17  |    <0.001 |

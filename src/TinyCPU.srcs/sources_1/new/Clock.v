@@ -28,8 +28,8 @@ module Clock(input raw_clk,  output exec_clk, output serial_clk);
         div = 0;
     end
     assign run = cnt[8];
-    assign exec_clk = run & div[0];
-    assign serial_clk = run & div[0];
+    assign exec_clk = run & div[1];
+    assign serial_clk = run & div[1];
     always @(negedge raw_clk) begin
         if (!run) cnt = cnt + 1; else div = div + 1;
     end

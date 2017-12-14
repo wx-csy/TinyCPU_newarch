@@ -21,7 +21,8 @@
 
 
 module CPU_test();
-    reg clk, uart_rxd;
+    reg clk;
+    reg uart_rxd;
     wire uart_txd;
     CPU cpu(clk, uart_rxd, uart_txd, , , ,);
     
@@ -32,16 +33,22 @@ module CPU_test();
         begin
             frame = {1'b1, (^data[7:0]), data, 1'b0};
             for (i = 0; i<=10; i=i+1) begin
-                uart_rxd = frame[i]; #16;
+                uart_rxd = frame[i]; #32;
             end
         end
     endtask
     
     initial begin 
         clk = 0; uart_rxd = 1; 
-        // #544;
-        // send_thru_serial(8'h61);
-        // send_thru_serial(8'h32);
+        #545;
+        send_thru_serial(8'h1);
+        send_thru_serial(8'h0);
+        send_thru_serial(8'h0);
+        send_thru_serial(8'h0);
+        send_thru_serial(8'h27);
+        send_thru_serial(8'he3);
+        send_thru_serial(8'h52);
+        send_thru_serial(8'hf0);
     end
     
     always #1 clk = ~clk;

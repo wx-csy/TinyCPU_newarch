@@ -1,0 +1,449 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Tue Dec 12 12:46:24 2017
+# Process ID: 7720
+# Current directory: E:/Vivado/TinyCPU_newarch/src
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6876 E:\Vivado\TinyCPU_newarch\src\TinyCPU.xpr
+# Log file: E:/Vivado/TinyCPU_newarch/src/vivado.log
+# Journal file: E:/Vivado/TinyCPU_newarch/src\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Vivado/TinyCPU_newarch/src/TinyCPU.xpr
+remove_files  E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Memory.v
+file delete -force E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Memory.v
+close [ open E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/dev_MainMemory.v w ]
+add_files E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/dev_MainMemory.v
+remove_files  E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/dev_MainMemory.v
+file delete -force E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/dev_MainMemory.v
+close [ open E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v w ]
+add_files E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v
+close [ open E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/AddressTranslator.v w ]
+add_files E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/AddressTranslator.v
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.1 -module_name fifo_generator_0 -dir e:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/ip
+set_property -dict [list CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} CONFIG.Input_Data_Width {8} CONFIG.Input_Depth {512} CONFIG.Enable_ECC {false} CONFIG.Output_Data_Width {8} CONFIG.Output_Depth {512} CONFIG.Reset_Type {Asynchronous_Reset} CONFIG.Use_Dout_Reset {false} CONFIG.Data_Count_Width {9} CONFIG.Write_Data_Count_Width {9} CONFIG.Read_Data_Count_Width {9} CONFIG.Full_Threshold_Assert_Value {505} CONFIG.Full_Threshold_Negate_Value {504} CONFIG.Empty_Threshold_Assert_Value {5} CONFIG.Empty_Threshold_Negate_Value {6}] [get_ips fifo_generator_0]
+generate_target {instantiation_template} [get_files e:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+remove_files  e:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+file delete -force e:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/ip/fifo_generator_0
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top FIFO8 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+close_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sim_1/new/Serial_test.v w ]
+add_files -fileset sim_1 E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sim_1/new/Serial_test.v
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+close_sim
+set_property top Serial_test [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+add_wave {{/Serial_test/serial}} 
+add_wave {{/Serial_test}} 
+restart
+run 10 us
+add_wave {{/Serial_test/serial/tx}} 
+restart
+run 10 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+add_wave {{/Serial_test}} 
+add_wave {{/Serial_test/serial/tx}} 
+restart
+run 10 us
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+restart
+run all
+run 10 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+add_wave {{/Serial_test/serial/tx_FIFO}} 
+restart
+run 10 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+add_wave {{/Serial_test/serial/tx_FIFO}} 
+restart
+run 10 us
+restart
+run all
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source Serial_test.tcl
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_test [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+add_wave {{/CPU_test/cpu}} 
+restart
+run 10 us
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+add_wave {{/CPU_test/cpu/mainmemory}} 
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+close_sim
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+open_run impl_1
+close_design
+close_hw
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1
+open_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close [ open E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/display.v w ]
+add_files E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/display.v
+close_hw
+close_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+run 10 us
+add_wave {{/CPU_test/cpu/serial}} 
+restart
+run 20 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+add_wave {{/CPU_test/cpu/serial}} 
+restart
+run 10 us
+add_wave {{/CPU_test/cpu/serial/rx}} 
+restart
+run 2 us
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+add_wave {{/CPU_test/cpu}} 
+add_wave {{/CPU_test/cpu/serial}} 
+save_wave_config {E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+run 2 us
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+run 2 us
+close_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+run 2 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+run 2 us
+add_wave {{/CPU_test/cpu/serial/tx}} 
+restart
+run 2 us
+close_sim
+launch_simulation
+open_wave_config E:/Vivado/TinyCPU_newarch/src/config/CPU_test_behav.wcfg
+source CPU_test.tcl
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/impl_1/CPU.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]

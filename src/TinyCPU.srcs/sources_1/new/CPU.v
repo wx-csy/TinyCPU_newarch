@@ -63,7 +63,7 @@ module CPU(input clk, input uart_rxd, output uart_txd, output [6:0] dis1, output
     wire [15:0] d_immd; wire [25:0] d_addr;
     Decoder decoder(instr, d_opcode, d_rs, d_rt, d_rd,
                     d_shamt, d_funct, d_immd, d_addr);
-                   
+    
     wire [31:0] immd_ext;
     assign immd_ext = _ext_signed ? {{16{d_immd[15]}}, d_immd} : {{16{1'b0}}, d_immd};
     
@@ -77,7 +77,7 @@ module CPU(input clk, input uart_rxd, output uart_txd, output [6:0] dis1, output
     
     MUX4_32 next_PC_mux(_s_next_PC, r_r2v, immd_ext << 2, addr_ext << 2, 0, next_PC);
     
-    MUX4_32 rwv_mux(_s_regw_data, PC+8, data_bus, alu_ans, 0, r_rwv);
+    MUX4_32 rwv_mux(_s_regw_data, PC+4, data_bus, alu_ans, 0, r_rwv);
     
     MUX4_5 r1_mux(_r1_sel, 5'b0, d_rs, d_rt, d_rd, r_r1);
     MUX4_5 r2_mux(_r2_sel, 5'b0, d_rs, d_rt, d_rd, r_r2);

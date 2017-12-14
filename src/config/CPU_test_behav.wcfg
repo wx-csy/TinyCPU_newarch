@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="520500000fs"></ZoomStartTime>
-      <ZoomEndTime time="540050001fs"></ZoomEndTime>
-      <Cursor1Time time="530600000fs"></Cursor1Time>
+      <ZoomStartTime time="337900000fs"></ZoomStartTime>
+      <ZoomEndTime time="1123900001fs"></ZoomEndTime>
+      <Cursor1Time time="865900000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="146"></NameColumnWidth>
-      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="67" />
+   <WVObjectSize size="90" />
    <wvobject fp_name="/CPU_test/cpu/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -229,8 +229,8 @@
       <obj_property name="ObjectShortName">uart_rxd</obj_property>
    </wvobject>
    <wvobject fp_name="/CPU_test/cpu/serial/debug" type="array">
-      <obj_property name="ElementShortName">debug[3:0]</obj_property>
-      <obj_property name="ObjectShortName">debug[3:0]</obj_property>
+      <obj_property name="ElementShortName">debug[31:0]</obj_property>
+      <obj_property name="ObjectShortName">debug[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/CPU_test/cpu/serial/port" type="array">
       <obj_property name="ElementShortName">port[9:0]</obj_property>
@@ -287,5 +287,97 @@
    <wvobject fp_name="/CPU_test/cpu/serial/output_data" type="array">
       <obj_property name="ElementShortName">output_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">output_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/write_clk" type="logic">
+      <obj_property name="ElementShortName">write_clk</obj_property>
+      <obj_property name="ObjectShortName">write_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/write_en" type="logic">
+      <obj_property name="ElementShortName">write_en</obj_property>
+      <obj_property name="ObjectShortName">write_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/wdata" type="array">
+      <obj_property name="ElementShortName">wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/read_clk" type="logic">
+      <obj_property name="ElementShortName">read_clk</obj_property>
+      <obj_property name="ObjectShortName">read_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/read_en" type="logic">
+      <obj_property name="ElementShortName">read_en</obj_property>
+      <obj_property name="ObjectShortName">read_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/rdata" type="array">
+      <obj_property name="ElementShortName">rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/full" type="logic">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/empty" type="logic">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/FIFO" type="array">
+      <obj_property name="ElementShortName">FIFO[256:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO[256:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/rptr" type="array">
+      <obj_property name="ElementShortName">rptr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rptr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx_FIFO/wptr" type="array">
+      <obj_property name="ElementShortName">wptr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wptr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/clk_serial" type="logic">
+      <obj_property name="ElementShortName">clk_serial</obj_property>
+      <obj_property name="ObjectShortName">clk_serial</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/uart_rxd" type="logic">
+      <obj_property name="ElementShortName">uart_rxd</obj_property>
+      <obj_property name="ObjectShortName">uart_rxd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/FIFO_we" type="logic">
+      <obj_property name="ElementShortName">FIFO_we</obj_property>
+      <obj_property name="ObjectShortName">FIFO_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/FIFO_wdata" type="array">
+      <obj_property name="ElementShortName">FIFO_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/check" type="logic">
+      <obj_property name="ElementShortName">check</obj_property>
+      <obj_property name="ObjectShortName">check</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/debug" type="array">
+      <obj_property name="ElementShortName">debug[31:0]</obj_property>
+      <obj_property name="ObjectShortName">debug[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/cnt" type="array">
+      <obj_property name="ElementShortName">cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/frame" type="array">
+      <obj_property name="ElementShortName">frame[11:0]</obj_property>
+      <obj_property name="ObjectShortName">frame[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/last_s_clk" type="logic">
+      <obj_property name="ElementShortName">last_s_clk</obj_property>
+      <obj_property name="ObjectShortName">last_s_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/arrival" type="logic">
+      <obj_property name="ElementShortName">arrival</obj_property>
+      <obj_property name="ObjectShortName">arrival</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_test/cpu/serial/rx/s_clk" type="logic">
+      <obj_property name="ElementShortName">s_clk</obj_property>
+      <obj_property name="ObjectShortName">s_clk</obj_property>
    </wvobject>
 </wave_config>
