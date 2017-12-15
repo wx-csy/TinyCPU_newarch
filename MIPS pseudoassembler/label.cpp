@@ -56,22 +56,7 @@ void process_links(){
             instr_I.immd += (labels[label] - position) / 4;
             *(uint32_t*)(mem+position) = instr_I.instr_u32;
             break;
-        /*
         case LINKING_J:
-            union {
-                struct {
-                    uint32_t addr:26;
-                    uint32_t opcode:6;
-                };
-                uint32_t instr_u32;
-            } _instr_J;
-            _instr_J.instr_u32 = *(uint32_t*)(mem+position);
-            _instr_J.addr += labels[label];
-            *(uint32_t*)(mem+position) = _instr_J.instr_u32;
-            break;
-        */
-        case LINKING_J_PC:
-
             instr_J.instr_u32 = *(uint32_t*)(mem+position);
             instr_J.addr += labels[label] / 4;
             *(uint32_t*)(mem+position) = instr_J.instr_u32;

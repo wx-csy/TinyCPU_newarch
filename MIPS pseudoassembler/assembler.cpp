@@ -49,8 +49,6 @@ void generate_code(){
 #include "instr.cpp"
 #include "pinstr.cpp"
 
-
-
 int main(int argc, char* argv[]){
     load_config(argc, argv);
     init_config();

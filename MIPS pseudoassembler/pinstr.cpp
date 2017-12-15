@@ -8,4 +8,9 @@ void _org(uint32_t pos){
     mem_ptr = pos;
 }
 
+void LOFFSET(_REGISTER rd, string label){
+    _ADD_LINK_RCD(LINKING_I, mem_ptr, label);
+    ADDIU(rd, $0, 0);
+}
+
 #define $(label) _ADD_LABEL(label);

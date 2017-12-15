@@ -6,8 +6,9 @@ J("start");
 $("start")
     LI($16, '\n');
     JAL("putchar");
-    LOFFSET($16, "hw");
+    LI($16, 1024);
     JAL("print");
     JAL("halt");
 
-_data("hw", "Hello, world!\n");
+_org(1024);
+    $data("hw", "Hello, world!\n");

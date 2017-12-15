@@ -3,7 +3,7 @@ inline void J(_ADDRESS addr){
 }
 
 inline void J(string label){
-    _ADD_LINK_RCD(LINKING_J_PC, mem_ptr, label);
+    _ADD_LINK_RCD(LINKING_J, mem_ptr, label);
     _MAKE_INSTR(J, (002, 0));
 }
 
@@ -21,7 +21,7 @@ inline void JAL(_ADDRESS addr){
 }
 
 inline void JAL(string label){
-    _ADD_LINK_RCD(LINKING_J_PC, mem_ptr, label);
+    _ADD_LINK_RCD(LINKING_J, mem_ptr, label);
     _MAKE_INSTR(J, (003, 0));
 }
 
