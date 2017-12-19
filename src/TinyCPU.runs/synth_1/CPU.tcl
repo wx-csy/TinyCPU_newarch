@@ -3,7 +3,6 @@
 # 
 
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a35tcsg324-1
@@ -19,15 +18,15 @@ set_property ip_output_repo e:/Vivado/TinyCPU_newarch/src/TinyCPU.cache/ip [curr
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/utility.v
-  E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/display.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Serial.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/RegSet.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v
+  E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/display.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Decoder.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Controller.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Clock.v
-  E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/ALU.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/AddressTranslator.v
+  E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/ALU.v
   E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/CPU.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {

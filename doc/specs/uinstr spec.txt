@@ -39,6 +39,10 @@ _mem_rw				W
 	0: read memory
 	1: write memory
 
+_mem_byte
+	Specify the width of memory operation.
+	0: word
+	1: byte
 
 Registers				REG
 
@@ -82,10 +86,13 @@ _s_alu_op2[2]		O2
 	10: shamt
 	11: extended immediate
 
-_alu_funct[4]		FUNC
+_alu_funct[5]		FUNCT
 	Specify ALU function.
 Hi/Lo |  000  |  001  |  010  |  011  |  100  |  101  |  110  |  111  |
 -----------------------------------------------------------------------
-  0   |   0   |  add  |       |  sub  |  and  |  or   |  xor  |  nor  |
-  1   |  <=0  |       |   lt  |  ltu  |  sll  |  srl  |       |       |
+  00  |   0   |  add  |       |  sub  |  and  |  or   |  xor  |  nor  |
+  01  |  <=0  |  ==   |   lt  |  ltu  |  sll  |  srl  |       |       |
+  10  |  mfhi |       |  mflo |       |       |       |       |       |
+  11  |       | multu |       |  divu |       |       |       |       |
+
 

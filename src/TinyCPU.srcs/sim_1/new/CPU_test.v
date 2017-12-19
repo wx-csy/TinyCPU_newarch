@@ -41,6 +41,7 @@ module CPU_test();
     initial begin 
         clk = 0; uart_rxd = 1; 
         #545;
+        /*
         send_thru_serial(8'h1);
         send_thru_serial(8'h0);
         send_thru_serial(8'h0);
@@ -49,6 +50,7 @@ module CPU_test();
         send_thru_serial(8'he3);
         send_thru_serial(8'h52);
         send_thru_serial(8'hf0);
+        */
     end
     
     always #1 clk = ~clk;

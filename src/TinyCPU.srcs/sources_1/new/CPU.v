@@ -28,10 +28,10 @@ module CPU(input clk, input uart_rxd, output uart_txd, output [6:0] dis1, output
 
     wire _jump, _rel, _addr_ext_mode;
     wire [1:0] _s_next_PC;
-    wire _ext_signed, _mem_en, _mem_rw;
+    wire _ext_signed, _mem_en, _mem_rw, _mem_byte;
     wire [1:0] _r1_sel; wire [1:0] _r2_sel; wire [1:0] _rw_sel;
     wire [4:0] _w_reg; wire [1:0] _s_regw_data;
-    wire [1:0] _s_alu_op2; wire [3:0] _alu_funct;
+    wire [1:0] _s_alu_op2; wire [4:0] _alu_funct;
     
     wire [4:0] r_r1; wire [4:0] r_r2; wire [4:0] r_rw;
     wire [31:0] r_r1v; wire [31:0] r_r2v; wire [31:0] r_rwv;
@@ -39,7 +39,7 @@ module CPU(input clk, input uart_rxd, output uart_txd, output [6:0] dis1, output
     assign data_bus = (_mem_en && _mem_rw) ? r_r2v : 32'bz;
     
     wire [31:0] alu_op1; wire [31:0] alu_op2; wire [31:0] alu_ans;
-    ALU alu(alu_op1, alu_op2, _alu_funct, alu_ans);
+    ALU alu(exec_clk, alu_op1, alu_op2, _alu_funct, alu_ans);
     assign alu_op1 = r_r1v;
     assign addr_bus = alu_ans;
     
@@ -50,7 +50,7 @@ module CPU(input clk, input uart_rxd, output uart_txd, output [6:0] dis1, output
     AddressTranslator addresstranslator(_mem_en, addr_bus, dev_en);
     
     wire [31:0] instr;
-    MainMemory mainmemory(exec_clk, PC, instr,
+    MainMemory mainmemory(exec_clk, PC, instr, _mem_byte,
                           dev_en[0], _mem_rw, addr_bus, data_bus);
     
     wire [31:0] debug;
@@ -71,7 +71,7 @@ module CPU(input clk, input uart_rxd, output uart_txd, output [6:0] dis1, output
     assign addr_ext = _addr_ext_mode ? {PC[31:26], d_addr} : {{6{d_addr[25]}}, d_addr};
     
     Controller controller(d_opcode, d_funct, _jump, _rel, _addr_ext_mode, _s_next_PC,
-                          _ext_signed, _mem_en, _mem_rw,
+                          _ext_signed, _mem_en, _mem_rw, _mem_byte,
                           _r1_sel, _r2_sel, _rw_sel, _w_reg, _s_regw_data,
                           _s_alu_op2, _alu_funct);
     

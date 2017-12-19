@@ -2,8 +2,8 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
 # IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
-# Start of session at: Fri Dec 15 00:30:12 2017
-# Process ID: 12932
+# Start of session at: Mon Dec 18 11:49:44 2017
+# Process ID: 7196
 # Current directory: E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/synth_1
 # Command line: vivado.exe -log CPU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU.tcl
 # Log file: E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/synth_1/CPU.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4608 
+INFO: Helper process launched with PID 13768 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 323.359 ; gain = 112.996
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 322.621 ; gain = 112.340
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'CPU' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/CPU.v:23]
 INFO: [Synth 8-638] synthesizing module 'Clock' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Clock.v:22]
@@ -25,13 +25,14 @@ INFO: [Synth 8-256] done synthesizing module 'Clock' (1#1) [E:/Vivado/TinyCPU_ne
 INFO: [Synth 8-638] synthesizing module 'RegSet' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/RegSet.v:1]
 INFO: [Synth 8-256] done synthesizing module 'RegSet' (2#1) [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/RegSet.v:1]
 INFO: [Synth 8-638] synthesizing module 'ALU' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/ALU.v:30]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (3#1) [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/ALU.v:1]
 INFO: [Synth 8-638] synthesizing module 'ProgramCounter' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Controller.v:22]
 INFO: [Synth 8-256] done synthesizing module 'ProgramCounter' (4#1) [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Controller.v:22]
 INFO: [Synth 8-638] synthesizing module 'AddressTranslator' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/AddressTranslator.v:23]
 INFO: [Synth 8-256] done synthesizing module 'AddressTranslator' (5#1) [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/AddressTranslator.v:23]
 INFO: [Synth 8-638] synthesizing module 'MainMemory' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v:22]
-INFO: [Synth 8-3876] $readmem data file 'E:/Vivado/TinyCPU_newarch/result.txt' is read successfully [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v:31]
+INFO: [Synth 8-3876] $readmem data file 'E:/Vivado/TinyCPU_newarch/result.txt' is read successfully [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v:32]
 INFO: [Synth 8-256] done synthesizing module 'MainMemory' (6#1) [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/MainMemory.v:22]
 INFO: [Synth 8-638] synthesizing module 'Serial' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/Serial.v:134]
 INFO: [Synth 8-638] synthesizing module 'FIFO8' [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/utility.v:51]
@@ -118,8 +119,6 @@ WARNING: [Synth 8-3331] design MainMemory has unconnected port address[17]
 WARNING: [Synth 8-3331] design MainMemory has unconnected port address[16]
 WARNING: [Synth 8-3331] design MainMemory has unconnected port address[15]
 WARNING: [Synth 8-3331] design MainMemory has unconnected port address[14]
-WARNING: [Synth 8-3331] design MainMemory has unconnected port address[1]
-WARNING: [Synth 8-3331] design MainMemory has unconnected port address[0]
 WARNING: [Synth 8-3331] design AddressTranslator has unconnected port address[30]
 WARNING: [Synth 8-3331] design AddressTranslator has unconnected port address[29]
 WARNING: [Synth 8-3331] design AddressTranslator has unconnected port address[28]
@@ -147,7 +146,7 @@ WARNING: [Synth 8-3331] design AddressTranslator has unconnected port address[2]
 WARNING: [Synth 8-3331] design AddressTranslator has unconnected port address[1]
 WARNING: [Synth 8-3331] design AddressTranslator has unconnected port address[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 360.688 ; gain = 150.324
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 360.047 ; gain = 149.766
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -157,7 +156,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 360.688 ; gain = 150.324
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 360.047 ; gain = 149.766
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -173,29 +172,31 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 661.723 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 662.105 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 661.723 ; gain = 451.359
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 662.105 ; gain = 451.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 661.723 ; gain = 451.359
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 662.105 ; gain = 451.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 661.723 ; gain = 451.359
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 662.105 ; gain = 451.824
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "LO" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [E:/Vivado/TinyCPU_newarch/src/TinyCPU.srcs/sources_1/new/ALU.v:31]
 INFO: [Synth 8-5546] ROM "arrival" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "FIFO_wdata" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5547] Trying to map ROM "CW_sp" into Block RAM due to explicit "ram_style" or "rom_style" specification
 INFO: [Synth 8-5547] Trying to map ROM "CW_op" into Block RAM due to explicit "ram_style" or "rom_style" specification
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 661.723 ; gain = 451.359
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 662.105 ; gain = 451.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,6 +209,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     64 Bit       Adders := 1     
 	   3 Input     33 Bit       Adders := 1     
 	   2 Input     32 Bit       Adders := 6     
 	   3 Input     32 Bit       Adders := 1     
@@ -220,7 +222,7 @@ Detailed RTL Component Info :
 	                9 Bit    Wide XORs := 1     
 	                8 Bit    Wide XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 4     
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
 	                9 Bit    Registers := 2     
@@ -230,14 +232,17 @@ Detailed RTL Component Info :
 	             128K Bit         RAMs := 1     
 	               2K Bit         RAMs := 2     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 6     
-	   4 Input     32 Bit        Muxes := 3     
-	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 10    
+	   3 Input     32 Bit        Muxes := 2     
+	  16 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     29 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 4     
 	   2 Input      8 Bit        Muxes := 3     
 	   4 Input      5 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -260,11 +265,20 @@ Detailed RTL Component Info :
 Module ALU 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     64 Bit       Adders := 1     
 	   3 Input     33 Bit       Adders := 1     
 	   2 Input     32 Bit       Adders := 1     
 	   3 Input     32 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   3 Input     32 Bit        Muxes := 2     
+	  16 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module ProgramCounter 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -279,6 +293,9 @@ Module MainMemory
 Detailed RTL Component Info : 
 +---RAMs : 
 	             128K Bit         RAMs := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
 Module FIFO8 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -324,7 +341,7 @@ Detailed RTL Component Info :
 Module Controller 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
 Module MUX4_32 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -352,37 +369,42 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5546] ROM "rx/arrival" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "rx/FIFO_wdata" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP LO0, operation Mode is: A*B.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: Generating DSP LO0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: Generating DSP LO0, operation Mode is: A*B.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: Generating DSP LO0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+DSP Report: operator LO0 is absorbed into DSP LO0.
+INFO: [Synth 8-5546] ROM "serial/rx/arrival" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "serial/rx/FIFO_wdata" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5547] Trying to map ROM "p_0_out" into Block RAM due to explicit "ram_style" or "rom_style" specification
 INFO: [Synth 8-5547] Trying to map ROM "p_0_out" into Block RAM due to explicit "ram_style" or "rom_style" specification
-WARNING: [Synth 8-3331] design Serial has unconnected port address[31]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[30]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[29]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[28]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[27]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[26]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[25]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[24]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[23]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[22]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[21]
-WARNING: [Synth 8-3331] design Serial has unconnected port address[20]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5784] Optimized 0 bits of RAM "serial/tx_FIFO/FIFO_reg" due to constant propagation. Old ram width 8 bits, new ram width 8 bits.
-WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[11]) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[10]) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[9]) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[0]) is unused and will be removed from module CPU.
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[7]' (FDE) to 'serial/tx/debug_reg[7]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[6]' (FDE) to 'serial/tx/debug_reg[6]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[5]' (FDE) to 'serial/tx/debug_reg[5]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[4]' (FDE) to 'serial/tx/debug_reg[4]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[3]' (FDE) to 'serial/tx/debug_reg[3]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[2]' (FDE) to 'serial/tx/debug_reg[2]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[1]' (FDE) to 'serial/tx/debug_reg[1]'
+INFO: [Synth 8-3886] merging instance 'serial/tx/frame_reg[0]' (FDE) to 'serial/tx/debug_reg[0]'
 WARNING: [Synth 8-3332] Sequential element (clock/div_reg[8]) is unused and will be removed from module CPU.
 WARNING: [Synth 8-3332] Sequential element (clock/div_reg[7]) is unused and will be removed from module CPU.
 WARNING: [Synth 8-3332] Sequential element (clock/div_reg[6]) is unused and will be removed from module CPU.
 WARNING: [Synth 8-3332] Sequential element (clock/div_reg[5]) is unused and will be removed from module CPU.
 WARNING: [Synth 8-3332] Sequential element (clock/div_reg[4]) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (clock/div_reg[3]) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (clock/div_reg[2]) is unused and will be removed from module CPU.
+WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[11]) is unused and will be removed from module CPU.
+WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[10]) is unused and will be removed from module CPU.
+WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[9]) is unused and will be removed from module CPU.
+WARNING: [Synth 8-3332] Sequential element (serial/rx/frame_reg[0]) is unused and will be removed from module CPU.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 661.723 ; gain = 451.359
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 662.105 ; gain = 451.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -392,10 +414,10 @@ ROM:
 +------------+------------+---------------+----------------+
 |Module Name | RTL Object | Depth x Width | Implemented As | 
 +------------+------------+---------------+----------------+
-|Controller  | p_0_out    | 64x27         | LUT            | 
-|Controller  | p_0_out    | 64x27         | LUT            | 
-|Controller  | p_0_out    | 64x27         | LUT            | 
-|Controller  | p_0_out    | 64x27         | LUT            | 
+|Controller  | p_0_out    | 64x29         | LUT            | 
+|Controller  | p_0_out    | 64x29         | LUT            | 
+|CPU         | p_0_out    | 64x29         | LUT            | 
+|CPU         | p_0_out    | 64x29         | LUT            | 
 +------------+------------+---------------+----------------+
 
 
@@ -418,6 +440,18 @@ Distributed RAM: Preliminary Mapping  Report (see note below)
 +------------+--------------------+-----------+----------------------+--------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -434,10 +468,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 661.723 ; gain = 451.359
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 699.074 ; gain = 488.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 752.066 ; gain = 541.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -451,7 +485,7 @@ Start Technology Mapping
 INFO: [Synth 8-4480] The timing for the instance serial/rx_FIFO/FIFO_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance serial/tx_FIFO/FIFO_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -475,7 +509,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -488,7 +522,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -500,25 +534,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -534,51 +568,52 @@ Report Cell Usage:
 +------+----------+------+
 |      |Cell      |Count |
 +------+----------+------+
-|1     |BUFG      |     2|
-|2     |CARRY4    |    95|
-|3     |LUT1      |   188|
-|4     |LUT2      |   215|
-|5     |LUT3      |   128|
-|6     |LUT4      |   144|
-|7     |LUT5      |   208|
-|8     |LUT6      |  1162|
-|9     |MUXF7     |   194|
-|10    |RAM128X1D |  1024|
-|11    |RAM32M    |    12|
-|12    |RAMB18E1  |     2|
-|13    |FDRE      |   297|
-|14    |IBUF      |     2|
-|15    |OBUF      |    23|
+|1     |BUFG      |     3|
+|2     |CARRY4    |   674|
+|3     |DSP48E1   |     4|
+|4     |LUT1      |   266|
+|5     |LUT2      |   320|
+|6     |LUT3      |  2188|
+|7     |LUT4      |   172|
+|8     |LUT5      |   185|
+|9     |LUT6      |  1128|
+|10    |MUXF7     |   261|
+|11    |MUXF8     |    25|
+|12    |RAM128X1D |  1024|
+|13    |RAM32M    |    12|
+|14    |RAMB18E1  |     2|
+|15    |FDRE      |   509|
+|16    |IBUF      |     2|
+|17    |OBUF      |    23|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+-------------+---------------+------+
 |      |Instance     |Module         |Cells |
 +------+-------------+---------------+------+
-|1     |top          |               |  3696|
-|2     |  alu        |ALU            |    15|
-|3     |  clock      |Clock          |    26|
-|4     |  controller |Controller     |    46|
-|5     |  display    |display_driver |    76|
-|6     |  mainmemory |MainMemory     |  1755|
-|7     |  pc         |ProgramCounter |   991|
-|8     |  regs       |RegSet         |   285|
-|9     |  serial     |Serial         |   459|
-|10    |    rx       |serial_rx      |   212|
-|11    |      div    |freq_div_1     |    87|
-|12    |    rx_FIFO  |FIFO8          |    64|
-|13    |    tx       |serial_tx      |   119|
-|14    |      div    |freq_div       |    77|
-|15    |    tx_FIFO  |FIFO8_0        |    64|
+|1     |top          |               |  6798|
+|2     |  clock      |Clock          |    31|
+|3     |  alu        |ALU            |  2861|
+|4     |  display    |display_driver |    76|
+|5     |  mainmemory |MainMemory     |  1915|
+|6     |  pc         |ProgramCounter |  1081|
+|7     |  regs       |RegSet         |   374|
+|8     |  serial     |Serial         |   416|
+|9     |    rx       |serial_rx      |   128|
+|10    |      div    |freq_div_1     |    85|
+|11    |    rx_FIFO  |FIFO8          |    59|
+|12    |    tx       |serial_tx      |   162|
+|13    |      div    |freq_div       |    77|
+|14    |    tx_FIFO  |FIFO8_0        |    67|
 +------+-------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 758.281 ; gain = 547.918
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 801.777 ; gain = 591.496
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 33 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 758.281 ; gain = 208.891
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 758.281 ; gain = 547.918
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 801.777 ; gain = 251.703
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 801.777 ; gain = 591.496
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1135 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1718 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -588,9 +623,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-74 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+84 Infos, 95 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 758.281 ; gain = 518.777
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 801.777 ; gain = 562.410
 INFO: [Common 17-1381] The checkpoint 'E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/synth_1/CPU.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 758.281 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 00:31:04 2017...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.129 . Memory (MB): peak = 801.777 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 18 11:50:49 2017...

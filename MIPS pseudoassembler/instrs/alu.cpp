@@ -70,3 +70,18 @@ inline void SRLV(_REGISTER rd, _REGISTER rt, _REGISTER rs){
     _MAKE_INSTR(R, (0, rs, rt, rd, 0, 012));
 }
 
+inline void MULTU(_REGISTER rs, _REGISTER rt){
+    _MAKE_INSTR(R, (0, rs, rt, $0, 0, 031));
+}
+
+inline void DIVU(_REGISTER rs, _REGISTER rt){
+    _MAKE_INSTR(R, (0, rs, rt, $0, 0, 033));
+}
+
+inline void MFHI(_REGISTER rd){
+    _MAKE_INSTR(R, (0, $0, $0, rd, 0, 020));
+}
+
+inline void MFLO(_REGISTER rd){
+    _MAKE_INSTR(R, (0, $0, $0, rd, 0, 022));
+}

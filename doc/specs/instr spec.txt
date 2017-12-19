@@ -7,16 +7,28 @@
 * Memory Operation
 
 LW -- Load Word (I)
-Syntax:     LW %rt, %base, offset, LW %rt, offset(%base)
-Operation:  %rt <- M[R[%base]+immd]
+Syntax:     LW %rt, %base, offset; LW %rt, offset(%base)
+Operation:  %rt <- M[R[%base]+offset]
 Encoding:   |  100011  | %base |  %rt  |          offset          |
                  LW
 
 SW -- Store Word (I)
-Syntax:     SW %rt, %base, offset, SW %rt, offset(%base)
-Operation:  M[R[%base]+immd] <- %rt
+Syntax:     SW %rt, %base, offset; SW %rt, offset(%base)
+Operation:  M[R[%base]+offset] <- %rt
 Encoding:   |  101011  | %base |  %rt  |          offset          |
                  SW
+
+LB -- Load Byte (I)
+Syntax:     LB %rt, %base, offset; LB %rt, offset(%base)
+Operation:  %rt <- M[R[%base]+offset]
+Encoding:   |  100000  | %base |  %rt  |          offset          |
+                 LB
+
+SB -- Store Byte (I)
+Syntax:     SB %rt, %base, offset; SB %rt, offset(%base)
+Operation:  M[R[%base]+offset] <- %rt
+Encoding:   |  101000  | %base |  %rt  |          offset          |
+                 SB
 
 * ALU Operation
 
@@ -128,6 +140,30 @@ Operation:  R[%rd] <- R[%rt] >> R[%rs] (logical)
 Encoding:   |  000000  |  %rs  |  %rt  |  %rd  | 00000 |  000110  |
                SPECIAL                             0       SRLV
 
+MULTU -- Multiply Unsigned Word (R)
+Syntax:     MULTU %rs, %rt
+Operation:  (%HI, %LO) <- %rs * %rt
+Encoding:   |  000000  |  %rs  |  %rt  | 00000 | 00000 |  011001  |
+               SPECIAL                                    MULTU
+
+DIVU -- Divide Unsigned Word (R)
+Syntax:     DIVU %rs, %rt
+Operation:  %LO <- %rs / %rt, %HI <- %rs mod %rt
+Encoding:   |  000000  |  %rs  |  %rt  | 00000 | 00000 |  011011  |
+               SPECIAL                                     DIVU
+
+MFHI -- Move From HI Register (R)
+Syntax:     MFHI %rd
+Operation:  %rd <- %HI
+Encoding:   |  000000  | 00000 | 00000 |  %rd  | 00000 |  010000  |
+               SPECIAL                                     MFHI
+
+MFLO -- Move From LO Register (R)
+Syntax:     MFLO %rd
+Operation:  %rd <- %LO
+Encoding:   |  000000  | 00000 | 00000 |  %rd  | 00000 |  010010  |
+               SPECIAL                                     MFLO
+
 * Jump Operation
 
 J -- Jump (J)
@@ -136,20 +172,26 @@ Operation:  %PC <- instr_index * 4
 Encoding:   |  000010  |              instr_addr                  |
                  J
 
+BEQ -- Branch on Equal (I)
+Syntax:     BEQ %rs, %rt, offset
+OperationL  If %rs == %rt Then %PC += Offset * 4
+Encoding:   |  000100  |  %rs  |  %rt  |          offset          |
+                BEQ 
+
 BLEZ -- Branch on Less Than or Equal to Zero (I)
 Syntax:     BLEZ %rs, offset
-Operation:  If R[%rs] <= 0 Then %PC += offset * 4
+Operation:  If %rs <= 0 Then %PC += offset * 4
 Encoding:   |  000110  |  %rs  | 00000 |          offset          |
                 BLEZ               0
 
 JAL -- Jump and Link (J)
 Syntax:     J instr_addr
-Operation:  %PC <- instr_index * 4, %31 <- R[%PC] + 8
+Operation:  %31 <- %PC + 4, %PC <- instr_index * 4,
 Encoding:   |  000011  |              instr_addr                  |
                 JAL
 
 JR -- Jump Register (R)
 Syntax:     JR %rs
 Operation:  %PC <- %rs
-Encoding:   |  000000  |  %rs  | 00000 | 00000 | 00000 |  001000  |
+Encoding:   |  000000  |  %rs  | 00000 | 00000 | 00000 |  011001  |
                SPECIAL                                      JR

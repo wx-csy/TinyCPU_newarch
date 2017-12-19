@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-| Date         : Fri Dec 15 00:32:25 2017
+| Date         : Mon Dec 18 11:52:30 2017
 | Host         : DESKTOP-CDNGG3S running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file CPU_control_sets_placed.rpt
 | Design       : CPU
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    57 |
-| Unused register locations in slices containing registers |    87 |
+| Number of unique control sets                            |    58 |
+| Unused register locations in slices containing registers |    83 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,10 +33,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             101 |           50 |
+| No           | No                    | No                     |             253 |          122 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              64 |           16 |
-| Yes          | No                    | No                     |             108 |           44 |
+| Yes          | No                    | No                     |             168 |           69 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              24 |            8 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -45,78 +45,79 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+------------------+------------------------------------+---------------------------------+------------------+----------------+
-|   Clock Signal   |            Enable Signal           |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
-+------------------+------------------------------------+---------------------------------+------------------+----------------+
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][5]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][0]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][1]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][2]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][3]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][4]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][6]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/rx/div/frame_reg[8][7]      |                                 |                1 |              1 |
-|  serial_clk_BUFG | serial/tx/div/uart_txd_reg         |                                 |                1 |              1 |
-| ~clk_IBUF_BUFG   |                                    |                                 |                1 |              2 |
-|  serial_clk_BUFG | serial/rx/div/FIFO_wdata_reg[7][0] | serial/rx/FIFO_wdata[7]_i_1_n_0 |                2 |              8 |
-|  serial_clk_BUFG | pc/E[0]                            |                                 |                3 |              8 |
-|  serial_clk_BUFG | serial/rx/div/E[0]                 | serial/rx/arrival0              |                3 |              8 |
-|  serial_clk_BUFG | serial/rx/E[0]                     |                                 |                3 |              8 |
-|  serial_clk_BUFG | serial/tx/div/E[0]                 | serial/tx/div/SR[0]             |                3 |              8 |
-| ~clk_IBUF_BUFG   | clock/sel                          |                                 |                3 |              9 |
-|  serial_clk_BUFG | serial/tx/FIFO_re0                 |                                 |                3 |             10 |
-|  serial_clk_BUFG | pc/rptr_reg[7]_8[0]                |                                 |                7 |             16 |
-|  serial_clk_BUFG | serial/tx/E[0]                     |                                 |                7 |             16 |
-|  clk_IBUF_BUFG   |                                    |                                 |                8 |             32 |
-|  serial_clk_BUFG |                                    | serial/rx/div/clear             |                8 |             32 |
-|  serial_clk_BUFG |                                    | serial/tx/div/cnt[0]_i_1__0_n_0 |                8 |             32 |
-|  serial_clk_BUFG | serial/rx/div/debug_reg[0][0]      |                                 |                9 |             32 |
-|  serial_clk_BUFG |                                    |                                 |               41 |             67 |
-|  serial_clk_BUFG | pc/p_0_in                          |                                 |               12 |             96 |
-|  serial_clk_BUFG | pc/FIFO_reg_86                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_87                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_88                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | controller/FIFO_reg_7              |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_90                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_91                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_92                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_93                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_94                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_95                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_96                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_97                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_98                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | controller/FIFO_reg_6              |                                 |               32 |            128 |
-|  serial_clk_BUFG | controller/FIFO_reg_8              |                                 |               32 |            128 |
-|  serial_clk_BUFG | controller/FIFO_reg_9              |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_71                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_72                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_73                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_74                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_75                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_76                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_77                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_78                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_89                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_79                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_80                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_81                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_82                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_83                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_84                     |                                 |               32 |            128 |
-|  serial_clk_BUFG | pc/FIFO_reg_85                     |                                 |               32 |            128 |
-+------------------+------------------------------------+---------------------------------+------------------+----------------+
++------------------+------------------------------------------+---------------------------------+------------------+----------------+
+|   Clock Signal   |               Enable Signal              |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++------------------+------------------------------------------+---------------------------------+------------------+----------------+
+|  serial_clk_BUFG | serial/rx/div/E[5]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[0]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[1]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[2]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[3]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[4]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[6]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/rx/div/E[7]                       |                                 |                1 |              1 |
+|  serial_clk_BUFG | serial/tx/div/uart_txd_reg               |                                 |                1 |              1 |
+| ~clk_IBUF_BUFG   | clock/run                                |                                 |                1 |              4 |
+|  serial_clk_BUFG |                                          |                                 |                4 |              6 |
+|  serial_clk_BUFG | serial/tx/div/E[0]                       | serial/tx/div/SR[0]             |                2 |              8 |
+|  exec_clk_BUFG   | pc/E[0]                                  |                                 |                3 |              8 |
+|  serial_clk_BUFG | serial/rx/div/FIFO_wdata_reg[0][0]       | serial/rx/FIFO_wdata[7]_i_1_n_0 |                3 |              8 |
+|  serial_clk_BUFG | serial/rx/div/cnt_reg[0]_0[0]            | serial/rx/arrival0              |                3 |              8 |
+|  serial_clk_BUFG | serial/rx/E[0]                           |                                 |                2 |              8 |
+| ~clk_IBUF_BUFG   | clock/sel                                |                                 |                2 |              9 |
+|  exec_clk_BUFG   | pc/rptr0                                 |                                 |                6 |             16 |
+|  serial_clk_BUFG | serial/tx_FIFO/E[0]                      |                                 |                4 |             16 |
+|  clk_IBUF_BUFG   |                                          |                                 |                8 |             32 |
+|  serial_clk_BUFG |                                          | serial/rx/div/clear             |                8 |             32 |
+|  serial_clk_BUFG |                                          | serial/tx/div/cnt[0]_i_1__1_n_0 |                8 |             32 |
+|  serial_clk_BUFG | serial/tx_FIFO/FIFO_re0                  |                                 |                8 |             34 |
+|  exec_clk_BUFG   | pc/LO_reg[0][0]                          |                                 |               34 |             64 |
+|  exec_clk_BUFG   | pc/LO0_57                                |                                 |               12 |             96 |
+|  exec_clk_BUFG   | pc/LO0_68                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_69                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_70                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_71                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_38                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_73                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_74                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_75                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | mainmemory/mem_reg_1152_1279_0_0_i_1_n_0 |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_34                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_72                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | regs/LO0_23                              |                                 |               32 |            128 |
+|  exec_clk_BUFG   | regs/LO0_24                              |                                 |               32 |            128 |
+|  exec_clk_BUFG   | regs/LO0_25                              |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_36                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_37                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_39                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_40                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_41                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_42                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_43                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_44                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_45                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_46                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_65                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_47                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_48                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_49                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_50                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_51                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_66                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   | pc/LO0_67                                |                                 |               32 |            128 |
+|  exec_clk_BUFG   |                                          |                                 |              110 |            215 |
++------------------+------------------------------------------+---------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
 | 1      |                     9 |
-| 2      |                     1 |
+| 4      |                     1 |
+| 6      |                     1 |
 | 8      |                     5 |
 | 9      |                     1 |
-| 10     |                     1 |
-| 16+    |                    40 |
+| 16+    |                    41 |
 +--------+-----------------------+
 
 

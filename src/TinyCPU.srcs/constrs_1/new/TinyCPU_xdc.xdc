@@ -1,4 +1,4 @@
-set_property -dict {PACKAGE_PIN P17 IOSTANDARD LVCMOS33} [get_ports clk ]
+set_property -dict {PACKAGE_PIN P17 IOSTANDARD LVCMOS33} [get_ports clk]
 
 set_property -dict {PACKAGE_PIN N5 IOSTANDARD LVCMOS33} [get_ports uart_rxd]
 set_property -dict {PACKAGE_PIN T4 IOSTANDARD LVCMOS33} [get_ports uart_txd]
@@ -28,6 +28,9 @@ set_property -dict {PACKAGE_PIN F1 IOSTANDARD LVCMOS33} [get_ports {sel2[2]}]
 set_property -dict {PACKAGE_PIN E1 IOSTANDARD LVCMOS33} [get_ports {sel2[1]}]
 set_property -dict {PACKAGE_PIN G6 IOSTANDARD LVCMOS33} [get_ports {sel2[0]}]
 
-create_clock -period 10 -waveform {5 10} -name clk [get_ports clk]
+create_clock -period 10.000 -name clk -waveform {5.000 10.000} [get_ports clk]
 # create_clock -period 10 -waveform {5 10} -name exec_clk [get_nets exec_clk]
 # create_clock -period 10 -waveform {5 10} -name exec_clk [get_nets exec_clk]
+
+# create_generated_clock -name {clock/div_reg__0[1]} -source [get_ports clk] -divide_by 4 [get_pins {clock/div_reg[1]/Q}]
+# create_generated_clock -name {clock/div_reg__0[3]} -source [get_ports clk] -divide_by 16 [get_pins {clock/div_reg[3]/Q}]

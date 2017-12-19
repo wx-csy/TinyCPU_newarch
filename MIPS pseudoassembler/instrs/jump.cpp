@@ -7,6 +7,15 @@ inline void J(string label){
     _MAKE_INSTR(J, (002, 0));
 }
 
+inline void BEQ(_REGISTER rs, _REGISTER rt, _IMMEDIATE offset){
+    _MAKE_INSTR(I, (004, rs, rt, offset));
+}
+
+inline void BEQ(_REGISTER rs, _REGISTER rt, string label){
+    _ADD_LINK_RCD(LINKING_I_PC, mem_ptr, label);
+    _MAKE_INSTR(I, (004, rs, rt, -1));
+}
+
 inline void BLEZ(_REGISTER rs, _IMMEDIATE offset){
     _MAKE_INSTR(I, (006, rs, $0, offset));
 }

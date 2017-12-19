@@ -33,7 +33,7 @@ module freq_div(input clk, input en, output out_freq);
     reg [31:0] cnt;
     initial cnt = 0;
 `ifdef __DEBUG__
-    always @(posedge clk) if (en) cnt = cnt + 1073741824; else cnt = 0;
+    always @(posedge clk) if (en) cnt = cnt + 1073741824/4; else cnt = 0;
 `else
     always @(posedge clk) if (en) cnt = cnt + 1649267; else cnt = 0;
 `endif
@@ -153,8 +153,8 @@ module Serial(input clk, input clk_serial, input en, input rw, input [31:0] addr
                   clk_serial, tx_FIFO_read_en, tx_FIFO_rdata, 
                   tx_FIFO_full, tx_FIFO_empty);
     
-    serial_rx rx(clk_serial, uart_rxd, rx_FIFO_write_en, rx_FIFO_wdata, , debug);
-    serial_tx tx(clk_serial, tx_FIFO_empty, tx_FIFO_rdata, tx_FIFO_read_en, uart_txd, );
+    serial_rx rx(clk_serial, uart_rxd, rx_FIFO_write_en, rx_FIFO_wdata, , );
+    serial_tx tx(clk_serial, tx_FIFO_empty, tx_FIFO_rdata, tx_FIFO_read_en, uart_txd, debug);
     
     reg [31:0] output_data;
     assign iodata = (en & ~rw) ? output_data : 32'bz;
