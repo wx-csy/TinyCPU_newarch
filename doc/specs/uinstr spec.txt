@@ -39,7 +39,7 @@ _mem_rw				W
 	0: read memory
 	1: write memory
 
-_mem_byte
+_mem_byte			B
 	Specify the width of memory operation.
 	0: word
 	1: byte

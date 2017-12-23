@@ -50,7 +50,6 @@ void generate_code(){
 #include "pinstr.cpp"
 
 int main(int argc, char* argv[]){
-    printf("ASCII of 'r' is 0x%x\n", (unsigned)'\r');
     load_config(argc, argv);
     init_config();
 

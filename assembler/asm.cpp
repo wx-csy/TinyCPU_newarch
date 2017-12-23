@@ -80,6 +80,13 @@ $("prog.fib")
         ADDU($4, $1, $2);
         MOV($2, $1);
         MOV($1, $4);
+        MOV($16, $1);
+        LOFFSET($17, "buf");
+        JAL("int2str");
+        LOFFSET($16, "buf");
+        JAL("print");
+        LI($16, '\n');
+        JAL("putchar");
         ADDIU($3, $3, -1);
         J("prog.fib.nextloop");
 
