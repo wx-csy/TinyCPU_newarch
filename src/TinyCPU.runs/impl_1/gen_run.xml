@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1513568982">
-  <File Type="PWROPT-DRC" Name="CPU_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="CPU_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="CPU_timing_summary_init.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1513759318">
   <File Type="ROUTE-PWR-RPX" Name="CPU_power_routed.rpx"/>
   <File Type="PA-TCL" Name="CPU.tcl"/>
-  <File Type="OPT-HWDEF" Name="CPU.hwdef"/>
+  <File Type="INIT-TIMING" Name="CPU_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="CPU_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="CPU_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="CPU.vdi"/>
   <File Type="OPT-DCP" Name="CPU_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="CPU.hwdef"/>
   <File Type="OPT-DRC" Name="CPU_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="CPU_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="CPU_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="CPU_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="CPU_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="CPU_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="CPU.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="CPU_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="CPU.drc"/>
+  <File Type="BG-BIN" Name="CPU.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="CPU_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="CPU.msk"/>
+  <File Type="BG-DRC" Name="CPU.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CPU_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="CPU.bgn"/>
+  <File Type="BITSTR-MSK" Name="CPU.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="CPU.bgn"/>
   <File Type="ROUTE-PWR" Name="CPU_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="CPU_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="CPU_route_status.rpt"/>

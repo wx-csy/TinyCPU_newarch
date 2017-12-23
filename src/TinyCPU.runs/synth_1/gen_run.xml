@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1513568982">
-  <File Type="RDS-PROPCONSTRS" Name="CPU_drc_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1513759318">
   <File Type="PA-TCL" Name="CPU.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="CPU_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="CPU.vds"/>
   <File Type="RDS-UTIL" Name="CPU_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="CPU_utilization_synth.pb"/>

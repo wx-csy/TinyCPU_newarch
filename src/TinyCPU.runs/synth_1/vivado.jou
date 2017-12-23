@@ -2,8 +2,8 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
 # IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
-# Start of session at: Mon Dec 18 11:49:44 2017
-# Process ID: 7196
+# Start of session at: Wed Dec 20 16:41:59 2017
+# Process ID: 19452
 # Current directory: E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/synth_1
 # Command line: vivado.exe -log CPU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU.tcl
 # Log file: E:/Vivado/TinyCPU_newarch/src/TinyCPU.runs/synth_1/CPU.vds

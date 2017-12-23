@@ -1,17 +1,23 @@
 #ifndef _LIBSTD_CPP
 #define _LIBSTD_CPP
 
+#define NEWLINE_CRLF
+
 // void halt();
 // use: none
 $("halt")
         J("halt");
 
 // int getchar();
-// use: $16 - $19, $31
+// use: $16, $31
 $("getchar")
         LW($16, _device(1, 0));
         BEQ($16, $0, "getchar");
         LW($16, _device(1, 16));
+#ifdef NEWLINE_CRLF
+        LI($17, '\r');
+        BEQ($16, $17, "getchar");
+#endif
         JR($31);
 
 // int getce();
@@ -30,11 +36,24 @@ $("getce")
         JR($31);
 */
 // void putchar(int)
-// use: $16 - $19, $31
+// use: $16 - $17, $31
 $("putchar")
+#ifdef NEWLINE_CRLF
+        LI($17, '\n');
+        BEQ($16, $17, "putchar.cr");
+        J("putchar.begin");
+    $("putchar.cr")
+        LW($17, _device(1, 1));
+        BEQ($17, $0, "putchar.writecr");
+        J("putchar.cr");
+    $("putchar.writecr")
+        LI($18, '\r');
+        SW($18, _device(1, 16));
+#endif
+    $("putchar.begin")
         LW($17, _device(1, 1));
         BEQ($17, $0, "putchar.write");
-        J("putchar");
+        J("putchar.begin");
     $("putchar.write")
         SW($16, _device(1, 16));
         JR($31);
@@ -86,5 +105,4 @@ $("scane")
     $("scane.end")
         SB($0, $20, 0);
         JR($21);
-
 #endif
